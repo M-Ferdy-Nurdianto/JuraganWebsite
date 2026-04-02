@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">Riko</title>
+  <desc id="desc">Ilustrasi foto profil anggota tim.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5d58ff"/>
+      <stop offset="100%" stop-color="#0fb98b"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bg)"/>
+  <circle cx="320" cy="255" r="123" fill="#ffd7c2"/>
+  <path d="M199 244c0-105 246-132 255 13-26-8-45-31-126-34-48-2-83 25-129 21z" fill="#2d3158"/>
+  <rect x="165" y="390" width="310" height="300" rx="150" fill="#f2f7ff"/>
+  <circle cx="275" cy="258" r="10" fill="#1f2a47"/>
+  <circle cx="365" cy="258" r="10" fill="#1f2a47"/>
+  <path d="M281 312c22 17 56 17 78 0" fill="none" stroke="#de7c70" stroke-width="8" stroke-linecap="round"/>
+  <text x="320" y="742" fill="#ffffff" font-family="Outfit, Segoe UI, sans-serif" font-size="42" text-anchor="middle" font-weight="700">Riko</text>
+</svg>

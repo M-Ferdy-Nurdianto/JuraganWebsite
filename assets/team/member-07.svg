@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">Citra Lestari</title>
+  <desc id="desc">Ilustrasi foto profil anggota tim.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f63ff"/>
+      <stop offset="100%" stop-color="#1d80ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bg)"/>
+  <circle cx="320" cy="255" r="120" fill="#ffdccc"/>
+  <path d="M184 249c17-101 249-119 283 12-31-14-60-36-114-36-63 0-109 31-169 24z" fill="#29305c"/>
+  <rect x="161" y="390" width="318" height="300" rx="150" fill="#f3f8ff"/>
+  <circle cx="275" cy="258" r="10" fill="#1f2a47"/>
+  <circle cx="365" cy="258" r="10" fill="#1f2a47"/>
+  <path d="M282 309c22 19 54 19 76 0" fill="none" stroke="#d96e73" stroke-width="8" stroke-linecap="round"/>
+  <text x="320" y="742" fill="#ffffff" font-family="Outfit, Segoe UI, sans-serif" font-size="42" text-anchor="middle" font-weight="700">Citra</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">Wira</title>
+  <desc id="desc">Ilustrasi foto profil anggota tim.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a4dff"/>
+      <stop offset="100%" stop-color="#18b98f"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bg)"/>
+  <circle cx="320" cy="255" r="122" fill="#ffd9c5"/>
+  <path d="M200 240c19-103 247-123 258 17-19-8-43-26-92-28-64-3-104 32-166 11z" fill="#2d335d"/>
+  <rect x="164" y="390" width="312" height="300" rx="150" fill="#f3f7ff"/>
+  <circle cx="275" cy="258" r="10" fill="#1f2a47"/>
+  <circle cx="365" cy="258" r="10" fill="#1f2a47"/>
+  <path d="M283 311c21 17 53 17 74 0" fill="none" stroke="#de7671" stroke-width="8" stroke-linecap="round"/>
+  <text x="320" y="742" fill="#ffffff" font-family="Outfit, Segoe UI, sans-serif" font-size="42" text-anchor="middle" font-weight="700">Wira</text>
+</svg>
