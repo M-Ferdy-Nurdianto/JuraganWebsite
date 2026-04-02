@@ -927,9 +927,13 @@ button {
   }
 
   .metric-grid,
-  .programmer-grid,
   .marketing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .programmer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 
   .member-card {
@@ -974,6 +978,11 @@ button {
 
   .hero {
     padding-top: 3.85rem;
+  }
+
+  .programmer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.52rem;
   }
 
   .brand {
@@ -1038,6 +1047,11 @@ button {
 @media (max-width: 340px) {
   .container {
     width: min(1140px, calc(100% - 0.6rem));
+  }
+
+  .programmer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.46rem;
   }
 
   .brand {
