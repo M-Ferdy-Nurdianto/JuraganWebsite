@@ -51,6 +51,25 @@ const descriptionMeta = document.querySelector('meta[name="description"]');
 const themeToggle = document.querySelector('[data-theme-toggle]');
 const themeToggleText = themeToggle ? themeToggle.querySelector('.theme-toggle-text') : null;
 
+function initAosAnimations() {
+  if (!window.AOS || !document.querySelector('[data-aos]')) {
+    return;
+  }
+
+  const prefersReducedMotion =
+    window.matchMedia &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  window.AOS.init({
+    once: true,
+    offset: 24,
+    mirror: false,
+    duration: 750,
+    disable: prefersReducedMotion
+  });
+}
+
 function updateThemeToggleLabel(theme) {
   if (!themeToggle || !themeToggleText) {
     return;
@@ -165,3 +184,4 @@ if (themeToggle) {
 
 applyTheme(savedTheme);
 applyLanguage(savedLanguage);
+initAosAnimations();

@@ -229,10 +229,38 @@ button {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.07em;
+}
+
+.brand-logo-wrap {
+  width: clamp(2.95rem, 5.3vw, 3.55rem);
+  height: clamp(2.95rem, 5.3vw, 3.55rem);
+  border-radius: 0.72rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: 255%;
+  max-width: none;
+  height: 255%;
+  object-fit: cover;
+  object-position: 22% 53%;
+  transform: translate(-18%, -30%);
+}
+
+.brand-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nav-actions {
@@ -362,6 +390,22 @@ button {
   font-size: clamp(1.72rem, 4.6vw, 3.35rem);
   margin-bottom: 1.15rem;
   max-width: 17ch;
+}
+
+.hero-brand {
+  display: block;
+  margin-bottom: 0.9rem;
+  width: fit-content;
+}
+
+.hero-logo {
+  width: clamp(16.8rem, 44vw, 28rem);
+  height: clamp(5.6rem, 12.4vw, 8.3rem);
+  object-fit: cover;
+  object-position: center 53%;
+  filter:
+    drop-shadow(0 0 14px rgba(130, 194, 255, 0.45))
+    drop-shadow(0 8px 24px rgba(7, 14, 44, 0.46));
 }
 
 .hero-copy p {
@@ -908,6 +952,21 @@ button {
     max-width: 100%;
   }
 
+  .hero-brand {
+    width: min(100%, 16.2rem);
+    height: clamp(4.8rem, 24vw, 5.8rem);
+    overflow: hidden;
+  }
+
+  .hero-logo {
+    width: 160%;
+    max-width: none;
+    height: 160%;
+    object-fit: cover;
+    object-position: 20% 53%;
+    transform: translate(-14%, -20%);
+  }
+
   .hero-copy p,
   .section-intro,
   .service-card p,
@@ -938,6 +997,10 @@ button {
 
   .member-card {
     max-width: none;
+  }
+
+  .marketing-grid .member-card {
+    max-width: 220px;
   }
 
   .nav-actions {
@@ -980,6 +1043,15 @@ button {
     padding-top: 3.85rem;
   }
 
+  .hero-brand {
+    width: min(100%, 15rem);
+    height: clamp(4.5rem, 27vw, 5.2rem);
+  }
+
+  .marketing-grid .member-card {
+    max-width: 195px;
+  }
+
   .programmer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.52rem;
@@ -987,11 +1059,17 @@ button {
 
   .brand {
     max-width: 42vw;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     font-size: 0.82rem;
     letter-spacing: 0.04em;
+  }
+
+  .brand-logo {
+    transform: translate(-18%, -30%);
+  }
+
+  .brand-logo-wrap {
+    width: 2.45rem;
+    height: 2.45rem;
   }
 
   .menu-toggle {
@@ -1056,6 +1134,11 @@ button {
 
   .brand {
     font-size: 0.74rem;
+  }
+
+  .brand-logo-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
   }
 
   .menu-toggle,

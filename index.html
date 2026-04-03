@@ -20,6 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -29,7 +30,12 @@
 
     <header class="site-header" id="beranda">
       <div class="container nav-wrap">
-        <a href="#beranda" class="brand">Juragan Website</a>
+        <a href="#beranda" class="brand" aria-label="Juragan Website">
+          <span class="brand-logo-wrap" aria-hidden="true">
+            <img src="assets/LogoE.png" alt="" class="brand-logo" />
+          </span>
+          <span class="brand-text">Juragan Website</span>
+        </a>
 
         <button
           class="menu-toggle"
@@ -81,6 +87,18 @@
       <section class="hero section">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
+            <div
+              class="hero-brand"
+              aria-label="Logo Juragan Website"
+              data-aos="fade-right"
+              data-aos-duration="900"
+              data-aos-easing="ease-out-cubic"
+            >
+              <span class="hero-logo-frame">
+                <img src="assets/LogoE.png" alt="Logo Juragan Website" class="hero-logo" />
+              </span>
+            </div>
+
             <p
               class="kicker"
               data-i18n
@@ -318,17 +336,17 @@
             <div class="group-header reveal" data-delay="1">
               <h3
                 data-i18n
-                data-id="Digital Marketing Team (1 Orang)"
-                data-en="Digital Marketing Team (1 Person)"
+                data-id="Digital Marketing (1 Orang)"
+                data-en="Digital Marketing (1 Person)"
               >
-                Digital Marketing Team (1 Orang)
+                Digital Marketing (1 Orang)
               </h3>
               <p
                 data-i18n
-                data-id="Spesialis marketing untuk campaign, konten, dan optimasi konversi bisnis Anda."
-                data-en="A dedicated marketing specialist for campaigns, content, and business conversion optimization."
+                data-id="Peran ini sebagai point of contact (POC) klien dan project manager: mengatur promosi jasa, menyusun pricing web yang optimal, dan mengoordinasikan alur kerja tim programmer."
+                data-en="This role acts as the client point of contact and project manager: handling service promotion, preparing optimal web pricing, and coordinating the programmers' workflow."
               >
-                Spesialis marketing untuk campaign, konten, dan optimasi konversi bisnis Anda.
+                Peran ini sebagai point of contact (POC) klien dan project manager: mengatur promosi jasa, menyusun pricing web yang optimal, dan mengoordinasikan alur kerja tim programmer.
               </p>
             </div>
 
@@ -343,7 +361,7 @@
                 />
                 <div class="member-body">
                   <h3>Didik Fajar</h3>
-                  <p class="member-role">Digital Marketing Strategist</p>
+                  <p class="member-role">Client POC &amp; Project Manager</p>
                 </div>
               </article>
             </div>
@@ -360,10 +378,10 @@
               </h3>
               <p
                 data-i18n
-                data-id="Tim developer lintas frontend, backend, mobile, dan DevOps untuk membangun software end-to-end."
-                data-en="A cross-functional developer team covering frontend, backend, mobile, and DevOps for end-to-end software delivery."
+                data-id="Tim developer kami bekerja kolaboratif di frontend, backend, mobile, dan DevOps untuk menghadirkan software yang rapi, stabil, dan siap pakai."
+                data-en="Our developers collaborate across frontend, backend, mobile, and DevOps to deliver software that is clean, stable, and ready to use."
               >
-                Tim developer lintas frontend, backend, mobile, dan DevOps untuk membangun software end-to-end.
+                Tim developer kami bekerja kolaboratif di frontend, backend, mobile, dan DevOps untuk menghadirkan software yang rapi, stabil, dan siap pakai.
               </p>
             </div>
 
@@ -701,7 +719,7 @@
           </p>
 
           <div class="cta-actions">
-            <a class="btn btn-whatsapp" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer"
+            <a class="btn btn-whatsapp" href="https://wa.me/6282352835382" target="_blank" rel="noreferrer"
               >WhatsApp</a
             >
             <a class="btn btn-outline" href="mailto:halo@startupanda.com">Email</a>
@@ -717,6 +735,7 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
