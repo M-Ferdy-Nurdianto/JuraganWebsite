@@ -37,26 +37,17 @@
           <span class="brand-text">Juragan Website</span>
         </a>
 
-        <button
-          class="menu-toggle"
-          aria-controls="site-nav"
-          aria-expanded="false"
-          data-i18n
-          data-id="Menu"
-          data-en="Menu"
-        >
-          Menu
-        </button>
-
-        <div class="nav-actions">
-          <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+          <div class="nav-container">
             <a href="#tentang" data-i18n data-id="Tentang" data-en="About">Tentang</a>
             <a href="#tim" data-i18n data-id="Tim" data-en="Team">Tim</a>
             <a href="#layanan" data-i18n data-id="Layanan" data-en="Services">Layanan</a>
             <a href="#paket" data-i18n data-id="Paket" data-en="Packages">Paket</a>
             <a href="#kontak" data-i18n data-id="Kontak" data-en="Contact">Kontak</a>
-          </nav>
+          </div>
+        </nav>
 
+        <div class="nav-actions">
           <div class="lang-switch" role="group" aria-label="Language switcher">
             <button type="button" class="lang-btn is-active" data-lang-button="id" aria-pressed="true">
               ID
@@ -78,6 +69,17 @@
           >
             <span class="theme-dot" aria-hidden="true"></span>
             <span class="theme-toggle-text">Dark Mode</span>
+          </button>
+
+          <button
+            class="menu-toggle"
+            aria-controls="site-nav"
+            aria-expanded="false"
+            aria-label="Menu"
+          >
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
           </button>
         </div>
       </div>
@@ -458,7 +460,7 @@
                 </div>
               </article>
 
-              <article class="member-card is-static reveal" data-delay="1">
+              <article class="member-card member-link reveal" data-delay="1">
                   <img
                     class="member-photo"
                     src="assets/team/alpin.webp"
@@ -469,6 +471,16 @@
                 <div class="member-body">
                   <h3>Alpin</h3>
                   <p class="member-role">Fullstack, Cybersecurity, Mobile App, Data Scientist</p>
+                  <a
+                    class="portfolio-tag portfolio-link"
+                    href="https://ray-portfolio-asli.vercel.app/work.html"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-i18n
+                    data-id="Lihat Porto"
+                    data-en="View Portfolio"
+                    >Lihat Porto</a
+                  >
                 </div>
               </article>
 

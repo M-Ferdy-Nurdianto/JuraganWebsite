@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Button Options - Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #6a57ff;
+            --ink: #1b2340;
+            --bg: #f3f4ff;
+            --surface: #ffffff;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .option-card {
+            background: var(--surface);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 1.5rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .btn-preview {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .btn-preview:hover {
+            border-color: var(--accent);
+            background: #f9f8ff;
+        }
+
+        /* --- OPTION A: THE RING --- */
+        .ring-inner {
+            width: 8px;
+            height: 8px;
+            background: var(--ink);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .option-a::before {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--ink);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .option-a.active .ring-inner {
+            width: 24px;
+            height: 2px;
+            border-radius: 0;
+            transform: rotate(45deg);
+        }
+        .option-a.active::before {
+            width: 24px;
+            height: 2px;
+            border: none;
+            background: var(--ink);
+            border-radius: 0;
+            transform: rotate(-45deg);
+        }
+
+        /* --- OPTION B: THE SQUARES --- */
+        .square-1, .square-2 {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border: 1.5px solid var(--ink);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .square-1 { transform: translate(-4px, -4px); }
+        .square-2 { transform: translate(4px, 4px); }
+        
+        .option-b.active .square-1 {
+            transform: rotate(45deg);
+            width: 24px;
+            height: 2px;
+            border-width: 0 0 2px 0;
+        }
+        .option-b.active .square-2 {
+            transform: rotate(-45deg);
+            width: 24px;
+            height: 2px;
+            border-width: 0 0 2px 0;
+        }
+
+        /* --- OPTION C: LIQUID --- */
+        .blob {
+            width: 20px;
+            height: 20px;
+            background: var(--ink);
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .option-c.active .blob {
+            border-radius: 0;
+            width: 24px;
+            height: 2px;
+            transform: rotate(45deg);
+        }
+        .option-c.active .blob::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: var(--ink);
+            top: 0;
+            left: 0;
+            transform: rotate(-90deg);
+            transition: all 0.4s ease;
+        }
+
+        /* --- OPTION D: PLUS --- */
+        .line-h {
+            width: 22px;
+            height: 2.5px;
+            background: var(--ink);
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        .line-v {
+            width: 2.5px;
+            height: 0;
+            background: var(--ink);
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        .option-d.active .line-h {
+            transform: rotate(45deg);
+        }
+        .option-d.active .line-v {
+            height: 22px;
+            transform: rotate(45deg);
+        }
+
+        /* --- OPTION E: DYNAMIC ISLAND --- */
+        .island-pill {
+            width: 28px;
+            height: 8px;
+            background: #000;
+            border-radius: 999px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .option-e.active .island-pill {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+        .option-e::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            left: 20%;
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+        .option-e.active::after {
+            opacity: 0;
+            left: 50%;
+        }
+        .option-e.active .island-pill::before,
+        .option-e.active .island-pill::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 2px;
+            background: #fff;
+            top: 50%;
+            left: 50%;
+            margin-top: -1px;
+            margin-left: -7px;
+        }
+        .option-e.active .island-pill::before { transform: rotate(45deg); }
+        .option-e.active .island-pill::after { transform: rotate(-45deg); }
+
+        header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Menu Button Options</h1>
+        <p>Klik tombol untuk melihat animasi "Juragan Website"</p>
+    </header>
+    <div class="demo-grid">
+        <div class="option-card">
+            <button class="btn-preview option-a" onclick="this.classList.toggle('active')">
+                <span class="ring-inner"></span>
+            </button>
+            <h3>Option A</h3>
+            <p>The Ring (Expanding Target)</p>
+        </div>
+        <div class="option-card">
+            <button class="btn-preview option-b" onclick="this.classList.toggle('active')">
+                <span class="square-1"></span>
+                <span class="square-2"></span>
+            </button>
+            <h3>Option B</h3>
+            <p>The Squares (Architectural)</p>
+        </div>
+        <div class="option-card">
+            <button class="btn-preview option-c" onclick="this.classList.toggle('active')">
+                <span class="blob"></span>
+            </button>
+            <h3>Option C</h3>
+            <p>The Liquid (Morphing Blob)</p>
+        </div>
+        <div class="option-card">
+            <button class="btn-preview option-d" onclick="this.classList.toggle('active')">
+                <span class="line-h"></span>
+                <span class="line-v"></span>
+            </button>
+            <h3>Option D</h3>
+            <p>The Plus (Transformer)</p>
+        </div>
+        <div class="option-card">
+            <button class="btn-preview option-e" onclick="this.classList.toggle('active')">
+                <span class="island-pill"></span>
+            </button>
+            <h3>Option E ✨</h3>
+            <p>The Dynamic Island (iOS Style)</p>
+        </div>
+    </div>
+</body>
+</html>
