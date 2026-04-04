@@ -16,7 +16,7 @@
     radial-gradient(circle at 90% 26%, rgba(17, 185, 138, 0.12), transparent 44%),
     radial-gradient(circle at 50% 95%, rgba(35, 124, 255, 0.11), transparent 42%),
     linear-gradient(180deg, #f9faff 0%, #f3f4ff 50%, #eff4ff 100%);
-  --header-bg: rgba(246, 248, 255, 0.78);
+  --header-bg: rgba(246, 248, 255, 0.98);
   --nav-ink: #33406d;
   --hero-pill-ink: #35406a;
   --hero-pill-border: #cfd8ff;
@@ -64,7 +64,7 @@
     radial-gradient(circle at 90% 26%, rgba(17, 185, 138, 0.2), transparent 44%),
     radial-gradient(circle at 50% 95%, rgba(35, 124, 255, 0.22), transparent 42%),
     linear-gradient(180deg, #0e1223 0%, #0f1428 52%, #101834 100%);
-  --header-bg: rgba(14, 18, 37, 0.82);
+  --header-bg: rgba(14, 18, 37, 0.98);
   --nav-ink: #d5ddff;
   --hero-pill-ink: #d7e0ff;
   --hero-pill-border: #3d4a85;
@@ -240,27 +240,27 @@ button {
 }
 
 .brand-logo-wrap {
-  width: clamp(2.95rem, 5.3vw, 3.55rem);
-  height: clamp(2.95rem, 5.3vw, 3.55rem);
-  border-radius: 0.72rem;
+  width: clamp(8rem, 17vw, 10.5rem);
+  height: clamp(2rem, 4.7vw, 2.7rem);
+  border-radius: 0;
   overflow: hidden;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand-logo {
-  width: 255%;
+  width: 100%;
+  height: 100%;
   max-width: none;
-  height: 255%;
-  object-fit: cover;
-  object-position: 22% 53%;
-  transform: translate(-18%, -30%);
+  object-fit: contain;
+  object-position: center;
+  transform: scale(2.75);
 }
 
 .brand-text {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: none;
 }
 
 .nav-actions {
@@ -1064,12 +1064,12 @@ button {
   }
 
   .brand-logo {
-    transform: translate(-18%, -30%);
+    transform: scale(2.95);
   }
 
   .brand-logo-wrap {
-    width: 2.45rem;
-    height: 2.45rem;
+    width: 6.75rem;
+    height: 2.15rem;
   }
 
   .menu-toggle {
@@ -1137,8 +1137,8 @@ button {
   }
 
   .brand-logo-wrap {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 5.9rem;
+    height: 2rem;
   }
 
   .menu-toggle,
