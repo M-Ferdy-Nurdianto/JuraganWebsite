@@ -44,6 +44,23 @@ if (yearSlot) {
   yearSlot.textContent = String(new Date().getFullYear());
 }
 
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach((item) => {
+  const question = item.querySelector('.faq-question');
+  question.addEventListener('click', () => {
+    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+    // Close other items
+    faqItems.forEach((otherItem) => {
+      if (otherItem !== item) {
+        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    question.setAttribute('aria-expanded', String(!isExpanded));
+  });
+});
+
 const root = document.documentElement;
 const langButtons = document.querySelectorAll('[data-lang-button]');
 const i18nNodes = document.querySelectorAll('[data-i18n]');

@@ -277,10 +277,6 @@ button {
   color: var(--nav-ink);
 }
 
-.nav-container {
-  display: contents;
-}
-
 .site-nav a {
   position: relative;
   font-weight: 500;
@@ -372,59 +368,11 @@ button {
   border: 1px solid var(--line);
   background: var(--surface);
   color: var(--ink);
-  border-radius: 50%;
-  padding: 0;
-  width: 2.4rem;
-  height: 2.4rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  min-height: 2.2rem;
   cursor: pointer;
-  position: relative;
-  z-index: 101;
-  transition: background 0.2s ease, border-color 0.2s ease;
-  align-items: center;
-  justify-content: center;
-}
-
-.hamburger-box {
-  width: 20px;
-  height: 12px;
-  display: inline-block;
-  position: relative;
-}
-
-.hamburger-inner,
-.hamburger-inner::before {
-  width: 20px;
-  height: 2px;
-  background-color: var(--ink);
-  border-radius: 4px;
-  position: absolute;
-  transition-property: transform, width;
-  transition-duration: 0.25s;
-  transition-timing-function: ease;
-}
-
-.hamburger-inner {
-  display: block;
-  bottom: 0;
-  width: 14px; /* Asymmetric second line */
-}
-
-.hamburger-inner::before {
-  content: "";
-  display: block;
-  top: -8px;
-  width: 20px; /* Full width first line */
-}
-
-/* Hamburger Animation Styles */
-.menu-toggle[aria-expanded="true"] .hamburger-inner {
-  transform: translateY(-5px) rotate(-45deg);
-  width: 20px;
-}
-
-.menu-toggle[aria-expanded="true"] .hamburger-inner::before {
-  top: 0;
-  transform: rotate(90deg);
 }
 
 .hero {
@@ -865,6 +813,195 @@ button {
   background: transparent;
 }
 
+/* Portfolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.portfolio-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: var(--card-shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+}
+
+.portfolio-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-image img {
+  transform: scale(1.05);
+}
+
+.portfolio-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.portfolio-tags .tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+  background: var(--tag-bg);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--tag-border);
+}
+
+.portfolio-tags .tag-link {
+  transition: all 0.2s ease;
+}
+
+.portfolio-tags .tag-link:hover {
+  background: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+  box-shadow: 0 4px 12px rgba(106, 87, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.portfolio-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.portfolio-content p {
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+
+/* FAQ */
+#faq {
+  background: var(--section-alt-bg);
+  border-top: 1px solid var(--section-alt-border);
+  border-bottom: 1px solid var(--section-alt-border);
+}
+
+.faq-grid {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--accent);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  font-family: inherit;
+}
+
+.faq-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--muted);
+  border-radius: 99px;
+  transition: background 0.2s ease;
+}
+
+.faq-icon::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.faq-icon::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon::before,
+.faq-question[aria-expanded="true"] .faq-icon::after {
+  background: var(--accent-strong);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.faq-answer p {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.faq-question[aria-expanded="true"] + .faq-answer {
+  max-height: 500px;
+}
+
 .site-footer {
   padding: 1.2rem 0 2rem;
 }
@@ -964,61 +1101,30 @@ button {
   }
 
   .site-nav {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    right: 0;
     background: var(--mobile-nav-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 0.9rem;
+    box-shadow: var(--shadow);
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    width: 100%;
-    height: 100dvh;
-    max-height: none;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+    align-items: flex-start;
+    padding: 0.8rem;
+    width: min(15.8rem, calc(100vw - 2.5rem));
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto;
     opacity: 0;
     pointer-events: none;
-    transform: none;
-    transition: opacity 0.4s ease;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
   .site-nav.open {
     opacity: 1;
     pointer-events: auto;
-  }
-
-  .nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    width: 100%;
-  }
-
-  .site-nav a {
-    font-size: 1.8rem;
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 600;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-
-  .site-nav.open a {
-    opacity: 1;
     transform: translateY(0);
   }
-
-  .site-nav.open a:nth-child(1) { transition-delay: 0.1s; }
-  .site-nav.open a:nth-child(2) { transition-delay: 0.15s; }
-  .site-nav.open a:nth-child(3) { transition-delay: 0.2s; }
-  .site-nav.open a:nth-child(4) { transition-delay: 0.25s; }
-  .site-nav.open a:nth-child(5) { transition-delay: 0.3s; }
 }
 
 @media (max-width: 720px) {
@@ -1031,23 +1137,23 @@ button {
   }
 
   .hero-copy h1 {
-    font-size: clamp(1.5rem, 8.4vw, 2.1rem);
+    font-size: clamp(1.5rem, 8.4vw, 2rem);
     max-width: 100%;
-    margin-bottom: 1.4rem;
   }
 
   .hero-brand {
-    width: 100%;
-    height: auto;
-    overflow: visible;
+    width: min(100%, 16.2rem);
+    height: clamp(4.8rem, 24vw, 5.8rem);
+    overflow: hidden;
   }
 
   .hero-logo {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center;
-    transform: none;
+    width: 160%;
+    max-width: none;
+    height: 160%;
+    object-fit: cover;
+    object-position: 20% 53%;
+    transform: translate(-14%, -20%);
   }
 
   .hero-copy p,
@@ -1066,11 +1172,6 @@ button {
   .hero-cta .btn,
   .cta-actions .btn {
     width: 100%;
-    margin-bottom: 0.4rem;
-  }
-
-  .hero-cta {
-    margin-top: 2rem;
   }
 
   .metric-grid,
@@ -1079,12 +1180,12 @@ button {
   }
 
   .programmer-grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 
   .member-card {
-    max-width: 280px;
+    max-width: none;
   }
 
   .marketing-grid .member-card {
@@ -1102,6 +1203,10 @@ button {
 
   .theme-toggle-text {
     display: none;
+  }
+
+  .site-nav {
+    width: min(13.6rem, calc(100vw - 1rem));
   }
 
   .cta-card {
@@ -1128,8 +1233,8 @@ button {
   }
 
   .hero-brand {
-    width: 100%;
-    height: auto;
+    width: min(100%, 15rem);
+    height: clamp(4.5rem, 27vw, 5.2rem);
   }
 
   .marketing-grid .member-card {
